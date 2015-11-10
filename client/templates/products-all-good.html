@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row ">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="list-group">
+                <div class="list-group-item" ng-repeat="(key,product) in products | orderBy: '-'">
+                    <div class="pull-right">
+                        <a ui-sref="edit-product({productId: product.id})"><span class="glyphicon glyphicon-pencil remove-button"></span></a>
+                        <span class="glyphicon glyphicon-remove  remove-button" ng-click="open(product)" confirm="Are you sure?"></span>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <span class="product-title"><span ng-class="product.classType">{{product.type}}</span>
+                            <a ui-sref="products-id({productId: product.id})">{{product.title}}</a>
+                            </span>
+                            <span style="float: right" class="product-price">Price: {{product.price | currency}}</span>
+                        </div>
+                    </div>
+                    <img class="list-group-image img-center img-responsive" ng-src="{{product.image}}" alt="" />
+                    <div class="aux-container">
+                        <ul class="nav nav-pills nav-justified">
+                            <li ng-class="{active: tab === 1}" ng-click="tab = 1"><a href="">Description</a></li>
+                            <li ng-class="{active: tab === 2}" ng-click="tab = 2"><a href="">Reviews</a></li>
+                        </ul>
+                        <div class="well well-lg" ng-show="tab === 1">
+                            <p class="indent">
+                                {{product.description}}
+                            </p>
+                        </div>
+                        <div class="well well-lg" ng-show="tab === 2">
+                            <div class="detailBox">
+                                <div class="titleBox">
+                                    <label>Reviews</label>
+                                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="commentBox">
+                                    <p class="taskDescription"><b>Add a review for this product.</b></p>
+                                </div>
+                                <div class="actionBox">
+                                    <ul class="commentList">
+                                        <li ng-repeat="review in product.reviews">
+                                            <div class="commenterImage">
+                                                <img ng-src="{{review.image}}" />
+                                            </div>
+                                            <div class="commentText">
+                                                <p class="">{{review.text}}</p> <span class="date sub-text">at {{review.date | date:'dd-mm-yyyy'}}</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <form class="form-inline" role="form">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" placeholder="Your comments" ng-model="textComment" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-default" ng-click="addReview(product)">Add</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

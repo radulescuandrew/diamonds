@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="list-group" masonry="{stamp: '.stamp'}">
+            <div ng-show="isAdmin" class="list-group-item stamp">
+                <span ng-click="openCreate()"> 
+                    <img class="list-group-image hvr-pulse-shrink img-responsive" ng-src="../images/addCard.png" alt="" />
+                </span>
+            </div>
+            <div class="list-group-item masonry-brick" ng-repeat="(key,product) in products | orderBy: '-'">
+                <div class="pull-right">
+                    <!-- <a ui-sref="edit-product({productId: product.id})"> -->
+                    <span class="glyphicon glyphicon-pencil remove-button" ng-show="isAdmin" ng-click="openEdit(product)"></span>
+                    <!--  </a> -->
+                    <span class="glyphicon glyphicon-remove  remove-button" ng-show="isAdmin" ng-click="open(product)" confirm="Are you sure?">         
+                    </span>
+                </div>
+                <br/>
+                
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <span class="product-title">
+                            <span ng-class="product.classType">{{product.type}}</span>
+                            <span class="closeable" ng-click="openProduct(product)">{{product.title}}</span>
+                        </span>
+                        <span style="float: right" class="product-price"> {{product.price | currency}}</span>
+                    </div>
+                </div>
+                <img class="list-group-image img-center img-responsive" ng-src="{{product.image}}" alt="" />
+                <div class="aux-container">
+                    <div class="well well-lg" ng-show="tab === 1">
+                        <p class="indent">
+                            {{product.description}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

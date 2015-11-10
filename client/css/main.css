@@ -1,0 +1,106 @@
+/*.top-buffer {
+    margin-top: 20px;
+}*/
+
+.img-center {
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+.product-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2283c6;
+}
+
+.product-price {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2283c6;
+}
+
+.indent {
+    text-indent: 20px;
+}
+
+
+/* 
+.aux-container {
+    margin-top: 25px;
+} */
+
+.menu {
+    margin-bottom: 25px;
+}
+
+.remove-button {
+    margin-left: 10px;
+    cursor: pointer;
+    color: gray;
+}
+
+@media only screen and (min-width:1200px) {
+    /* styles for browsers larger than 960px; */
+    .masonry-brick {
+        width: 30%;
+    }
+    .stamp {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    /* styles for browsers larger than 960px; */
+    .masonry-brick {
+        width: 50%;
+    }
+    .stamp {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width:780px) {
+    /* styles for browsers larger than 960px; */
+    .masonry-brick {
+        width: 100%;
+    }
+    .stamp {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30%;
+        display:none;
+    }
+}
+
+
+/* @media only screen and (min-width:1440px) {
+    styles for browsers larger than 1440px;
+    .masonry-brick {
+        width: 25%;
+    }
+} */
+
+@media only screen and (max-device-width:480px) {
+    /* styles for mobile browsers smaller than 480px; (iPhone) */
+    .masonry-brick {
+        width: 100%;
+    }
+}
+
+
+.closeable{
+    cursor: pointer;
+}

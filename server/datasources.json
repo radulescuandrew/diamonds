@@ -1,0 +1,11 @@
+{
+  "db": {
+    "host": "ds057862.mongolab.com",
+    "port": 57862,
+    "database": "diamondshop",
+    "username": "andrew",
+    "password": "remi7724130",
+    "name": "db",
+    "connector": "mongodb"
+  }
+}

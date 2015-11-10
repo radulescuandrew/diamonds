@@ -1,0 +1,26 @@
+{
+  "ids": {
+    "User": 2,
+    "AccessToken": 2,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1,
+    "product": 18
+  },
+  "models": {
+    "User": {
+      "1": "{\"password\":\"$2a$10$8hfCv1i0e95GZYVL//SgmO7GaR0VXkDrovEZERCDR6x8JgbZxNaPW\",\"email\":\"radulescuandrew@gmail.com\",\"id\":1}"
+    },
+    "AccessToken": {
+      "3ivaSBVdIMa39vI5XaSd447gr9TX8KS0M3oCjFXOZ1DEAUZZ3q7PRcijtQu4ed4B": "{\"id\":\"3ivaSBVdIMa39vI5XaSd447gr9TX8KS0M3oCjFXOZ1DEAUZZ3q7PRcijtQu4ed4B\",\"ttl\":1209600,\"created\":\"2015-08-20T14:47:43.501Z\",\"userId\":1}"
+    },
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {},
+    "product": {
+      "15": "{\"title\":\"Pink Panther Diamond\",\"price\":999.99,\"description\":\"Diamante Diamante Diamante Diamante Diamante\",\"image\":\"https://upload.wikimedia.org/wikipedia/commons/8/8f/Apollo_synthetic_diamond.jpg\",\"type\":\"NEW\",\"reviews\":[{\"image\":\"http://lorempixel.com/50/50/people/6\",\"text\":\"dsadas\",\"date\":\"2015-08-24T10:24:42.805Z\"},{\"image\":\"http://lorempixel.com/50/50/people/6\",\"text\":\"yyy\",\"date\":\"2015-08-23T16:22:42.876Z\"},{\"image\":\"http://lorempixel.com/50/50/people/6\",\"text\":\"qqq\",\"date\":\"2015-08-23T16:21:07.630Z\"}],\"classType\":\"label label-danger\",\"id\":15}",
+      "16": "{\"title\":\"Baguette Diamond\",\"price\":1.675,\"description\":\"Add a touch of vintage sophistication with these diamond leverback earrings featuring baguette-cut diamonds surrounded by a halo of melee diamonds set in 18k white gold.\",\"image\":\"http://img.bluenile.com/is/image/bluenile/-baguette-diamond-halo-leverback-vintage-/45003_main?$phab_detailmain$\",\"type\":\"COOL\",\"reviews\":[],\"classType\":\"label label-success\",\"id\":16}",
+      "17": "{\"title\":\"Radiant Diamond\",\"price\":423.55,\"description\":\"H grade diamonds have a very slight tinge of color which is only perceptible when evaluated next to a colorless diamond. They appear nearly colorless to non diamond professionals and offer an excellent investment.\",\"image\":\"http://www.israel-diamonds.com/ProductMedia/2008/05/31312/ecd91abe-eb69-4343-be56-cec1e9c396e9.jpg\",\"type\":\"NEW\",\"reviews\":[],\"classType\":\"label label-danger\",\"id\":17}"
+    }
+  }
+}

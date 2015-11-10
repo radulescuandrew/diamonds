@@ -1,0 +1,60 @@
+<div class="modal-header">
+    <div class="pull-right">
+        <span class="glyphicon glyphicon-remove closeable" ng-click="cancel()"></span>
+    </div>
+    <div class="row">
+        <br/>
+        <div class="col-md-10 col-md-offset-1">
+            <span class="product-title"><span ng-class="currentProd.classType">{{currentProd.type}}</span> {{currentProd.title}}
+            </span>
+            <span style="float: right" class="product-price">Price: {{currentProd.price | currency}}</span>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+    <div class="img-center">
+        <img class="list-group-image img-center img-responsive" ng-src="{{currentProd.image}}" alt="" />
+    </div>
+    <div class="aux-container" ng-init="tab=1">
+        <ul class="nav nav-pills nav-justified">
+            <li ng-class="{active: tab === 1}" ng-click="tab = 1"><a href="">Description</a></li>
+            <li ng-class="{active: tab === 2}" ng-click="tab = 2"><a href="">Reviews</a></li>
+        </ul>
+        <div class="well well-lg" ng-show="tab === 1">
+            <p class="indent">
+                {{currentProd.description}}
+            </p>
+        </div>
+        <div class="well well-lg" ng-show="tab === 2">
+            <div class="detailBox">
+                <div class="titleBox">
+                    <label>Reviews</label>
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                </div>
+                <div class="commentBox">
+                    <p class="taskDescription"><b>Add a review for this product.</b></p>
+                </div>
+                <div class="actionBox">
+                    <ul class="commentList">
+                        <li ng-repeat="review in currentProd.reviews">
+                            <div class="commenterImage">
+                                <img ng-src="{{review.image}}" />
+                            </div>
+                            <div class="commentText">
+                                <p class="">{{review.text}}</p> <span class="date sub-text" am-time-ago="review.date"></span>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Your comments" ng-model="textComment" />
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-default" ng-click="addReview(currentProd)">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

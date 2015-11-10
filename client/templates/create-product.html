@@ -1,0 +1,54 @@
+<div class="col-md-10 col-md-offset-1">
+    <form name="newProdForm" ng-submit="addProduct()" novalidate>
+        <legend>Create a new product</legend>
+        <div class="form-group" ng-class="{ 'has-error': newProdForm.title.$touched && newProdForm.title.$invalid, 'has-success': newProdForm.title.$touched && newProdForm.title.$valid }">
+            <label for="inputEmail">Product name</label>
+            <input type="text" class="form-control" id="inputProductName" placeholder="Enter a product name..." ng-model="newProduct.title" name="title" ng-minlength="8" ng-maxlength="25" required>
+            <div class="help-block" ng-messages="newProdForm.title.$error" ng-if="newProdForm.title.$touched">
+                <p ng-message="minlength">Product name is too short.</p>
+                <p ng-message="maxlength">Product name is too long.</p>
+                <p ng-message="required">Product name is required.</p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error': newProdForm.price.$touched && newProdForm.price.$invalid, 'has-success': newProdForm.price.$touched && newProdForm.price.$valid }">
+            <label for="inputPrice">Price</label>
+            <input type="number" class="form-control" placeholder="Enter price..." ng-model="newProduct.price" name="price" required>
+            <div class="help-block" ng-messages="newProdForm.price.$error" ng-if="newProdForm.price.$touched">
+                <p ng-message="required">Price is required.</p>
+                <p ng-message="number">Price should be a number.</p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newProdForm.description.$touched && newProdForm.description.$invalid, 'has-success': newProdForm.description.$touched && newProdForm.description.$valid }">
+            <label for="description">Description</label>
+            <textarea type="" placeholder="Describe yourself here..." class="form-control" ng-model="newProduct.description" name="description" required ng-minlength="30" ng-maxlength="500"></textarea>
+            <div class="help-block" ng-messages="newProdForm.description.$error" ng-if="newProdForm.description.$touched">
+                <p ng-message="required">Description is required.</p>
+                <p ng-message="minlength">Description should have minimum 50 characters.</p>
+                <p ng-message="maxlength">Description should have maximum 500 characters.</p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': newProdForm.image.$touched && newProdForm.image.$invalid, 'has-success': newProdForm.image.$touched && newProdForm.image.$valid }">
+            <label for="inputEmail">Image URL</label>
+            <input type="url" class="form-control" id="inputImageUrl" placeholder="Enter an image url..." ng-model="newProduct.image" name="image" required>
+            <div class="help-block" ng-messages="newProdForm.image.$error" ng-if="newProdForm.image.$touched">
+                <p ng-message="required">Image URL is required.</p>
+                <p ng-message="url">Enter a valid URL like http://link-adress.com.</p>
+               
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="radioProductType">Product type</label>
+            <label class="checkbox-inline">
+                <input type="radio" name="optionsRadios" id="typeNew" ng-model="newProduct.type" value="NEW" checked> New
+            </label>
+            <label class="checkbox-inline">
+                <input type="radio" name="optionsRadios" id="typeFeatured" ng-model="newProduct.type" value="FEATURED"> Featured
+            </label>
+            <label class="checkbox-inline">
+                <input type="radio" name="optionsRadios" id="typeCool" ng-model="newProduct.type" value="COOL"> Cool
+            </label>
+        </div>
+        <button type="submit" class="btn btn-success" ng-disabled="newProdForm.$invalid">Create new product</button>
+        <br />
+    </form>
+</div>
